@@ -1,0 +1,19 @@
+{
+  "name": "clean-lerna-workspaces",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "./packages/*",
+    "./apps/*"
+  ],
+  "scripts": {
+    "start": "npx lerna exec 'npm run start' --scope app",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "lerna": "^4.0.0",
+    "server": "file:apps/app"
+  }
+}
