@@ -1,8 +1,8 @@
 import React from 'react';
 import './App.css';
-const { randomToTen }  = require("random");
-const logger = require("logger");
-const re = require("reXporter");
+import { randomToTen }  from "random";
+import logger from "logger";
+import re from "reXporter";
 
 function App() {
   return (

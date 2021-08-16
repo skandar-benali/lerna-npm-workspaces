@@ -2,13 +2,15 @@
   "name": "clean-lerna-workspaces",
   "version": "1.0.0",
   "private": true,
-  "workspaces": [
-    "./packages/*",
-    "./apps/*"
-  ],
+  "workspaces": {
+      "packages" : [ "./packages/*", "./apps/*" ],
+      "nohoist": ["**/lodash*"]
+    },
   "scripts": {
-    "start": "npx lerna exec 'npm run start' --scope app",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build-packages": "npm run build -w logger -w random -w reXporter",
+    "build-with-lerna": "lerna run build-packages",
+    "start": "npm run build-packages && npx lerna exec 'npm run start' --scope app",
+    "test": "npm run test --workspaces"
   },
   "author": "",
   "license": "ISC",

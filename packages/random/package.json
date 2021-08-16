@@ -1,4 +1,12 @@
 {
   "name": "random",
-  "version": "1.0.0"
+  "version": "1.0.0",
+  "main": "./lib/index.js",
+  "types": "./lib/index.d.ts",
+  "scripts": {
+    "build": "tsc -d --declarationMap"
+  },
+  "dependencies": {
+    "lodash": "^4.17.21"
+  }
 }
